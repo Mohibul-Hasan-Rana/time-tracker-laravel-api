@@ -27,6 +27,7 @@ class ProjectRequest extends FormRequest
             'status' => 'in:active,completed',
             'deadline' => 'nullable|date',
             'client_id' => 'required|exists:clients,id',
+            'user_id' => 'required|exists:users,id',
         ];
     }
 }
