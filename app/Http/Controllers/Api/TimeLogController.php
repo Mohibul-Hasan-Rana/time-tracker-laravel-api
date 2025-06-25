@@ -99,7 +99,7 @@ class TimeLogController extends Controller
 
     public function start(TimeLogRequest $request)
     {       
-        $this->authorize('create', Project::class);
+        //$this->authorize('create', Project::class);
         $activeLog = $request->user()->timeLogs()
             ->whereNull('end_time')
             ->first();

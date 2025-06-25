@@ -30,10 +30,10 @@ class ProjectController extends Controller
         return response()->json($project->load('client'));
     }
 
-    public function update(ProjectRequest $request, Project $project)
+    public function update(Request $request, Project $project)
     {
         $this->authorize('update', $project);
-        $project->update($request->validated());
+        $project->update($request->all());
         return response()->json($project);
     }
 
